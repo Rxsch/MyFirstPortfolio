@@ -74,3 +74,11 @@ nav ul li a:hover::after{
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.about-col-1{
+    flex-basis: 35%;
+}
+/* Format of the user image*/
+.about-col-1{
+    width: 100%;
+    border-radius: 15px;
+}
