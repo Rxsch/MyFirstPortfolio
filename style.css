@@ -64,3 +64,13 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color:#000ff0;
 }
+/*-------------about-------------*/
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
