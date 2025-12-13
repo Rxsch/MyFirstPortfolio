@@ -21,7 +21,7 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Capabilities</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
@@ -42,11 +42,63 @@
                 </div>
                   <!--About me Tittle-->
                 <div class="about-col-2">
-                    <h1>About Me</h1>
+                    <h1 class="sub-title">About Me</h1>
+                     <!--About me Paragraph-->
+                    <p>Sample text</p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Academic & Personal Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <!--Skills tab content-->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/APP interfaces</li>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                            <li><span>App Development</span><br>Building Android/IOS apps</li>
+                        </ul>
+                    </div>
+                    <!--Academic & Personal Experience-->
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Project 1</span><br>Sample Project</li>
+                            <li><span>Project 2</span><br> Sample Project</li>
+                            <li><span>Project 3</span><br>Sample Project</li>
+                        </ul>
+                    </div>
+                    <!--Education tab content-->
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2027</span><br> Expected Bachelor of Science (B.S.) in Computer Science, University of Central Florida</li>
+                            <li><span>2024</span><br>Associate in Arts (A.A.) in Computer Science, Valencia College (Honors Certificate)</li>
+                            <li><span>2022</span><br>High School Diploma, Celebration High School</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- --------- Capabilities --------- -->
+<div id="capabilities">
+    
+</div>
 
+<script>
+
+    var tablinks= document.getElementsByClassName("tab-links");
+    var tabcontents= document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+         for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
 </body>
 </html>
