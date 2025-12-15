@@ -20,15 +20,15 @@
             <nav>
                 <!-- Website logo -->
                 <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Capabilities</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <i class="fa-solid fa-xmark"></i>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
-                <i class="fa-solid fa-list"></i>
+                <i class="fa-solid fa-list"onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
              <p>Computer Science Student</p>
@@ -113,7 +113,7 @@
     </div>
 </div>
 <!-- ---------Portfolio--------- -->
- <div id="Portfolio">
+ <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Work </h1>
         <div class="work-list">
@@ -171,9 +171,9 @@
       </div>
 
       <div class="contact-right">
-        <form>
+        <form name="submit-to-google-sheet">
           <input type="text" name="Name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
           <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
           <button type="submit" class="btn btn2">Send</button>
         </form>
@@ -197,6 +197,29 @@
         document.getElementById(tabname).classList.add("active-tab");
     }
 
+</script>
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+      function closemenu(){
+        sidemenu.style.right="-200px";
+    }
+</script>
+<script>
+  const scriptURL = '<https://script.google.com/macros/s/AKfycbwh90yKnsstYiZgwS6jsN39StX6oCiGE4J-_3Qe1Gy17Z1GH_YbJVidRFSp6qcCLVql/exec>'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
 </script>
 </body>
 </html>
